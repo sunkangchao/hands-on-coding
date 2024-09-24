@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_PATH" value="logs"/>
+    <property name="LOG_FILE" value="report"/>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+<!--    <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <append>true</append>-->
+<!--        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">-->
+<!--            <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout">-->
+<!--                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{86}.%method:%L - [%tid] - %msg%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}</pattern>-->
+<!--            </layout>-->
+<!--        </encoder>-->
+
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>-->
+<!--                ${LOG_PATH}/archived/n/${LOG_FILE}.%d{dd-MM-yyyy}.log-->
+<!--            </fileNamePattern>-->
+<!--            <maxHistory>30</maxHistory>-->
+<!--        </rollingPolicy>-->
+<!--    </appender>-->
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}</pattern>
+        </encoder>
+    </appender>
+
+<!--    <logger name="fileLog" additivity="false" level="INFO">-->
+<!--        <appender-ref ref="fileAppender"/>-->
+<!--    </logger>-->
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+<!--    <property name="DATABASE_LOG_FILE" value="database"/>-->
+<!--    <property name="DATABASE_PATTERN"-->
+<!--              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%thread] %logger{40}.%method.%L [%tid] %msg%n"/>-->
+<!--    <property name="LOG_PATH_DATABASE" value="log"/>-->
+
+<!--    &lt;!&ndash;文件输出(按日期存档)[for database decrypt]&ndash;&gt;-->
+<!--    <appender name="DATABASE_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <file>${LOG_PATH_DATABASE}/${DATABASE_LOG_FILE}/${DATABASE_LOG_FILE}.log</file>-->
+<!--        <append>true</append>-->
+
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter" >-->
+<!--            <level>TRACE</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+
+<!--        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">-->
+<!--            <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout">-->
+<!--                <pattern>${DATABASE_PATTERN}</pattern>-->
+<!--            </layout>-->
+<!--        </encoder>-->
+
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>-->
+<!--                ${LOG_PATH_DATABASE}/archived/${DATABASE_LOG_FILE}_%d{yyyy-MM-dd}.log-->
+<!--            </fileNamePattern>-->
+<!--            <maxHistory>30</maxHistory>-->
+<!--        </rollingPolicy>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash;数据库解密相关的日志打印到指定的文件中&ndash;&gt;-->
+<!--    <logger name="database" additivity="false" level="TRACE">-->
+<!--        <appender-ref ref="DATABASE_FILE"/>-->
+<!--    </logger>-->
+</configuration>
