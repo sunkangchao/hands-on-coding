@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+logs
+log
 
 ### Eclipse ###
 .apt_generated
