@@ -1,4 +1,4 @@
-package com.project.core;
+package com.project.core.kernel;
 
 /**
  * Test

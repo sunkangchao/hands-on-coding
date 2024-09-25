@@ -1,4 +1,4 @@
-package com.project.core.zookeeper;
+package com.project.core.examples.zookeeper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;

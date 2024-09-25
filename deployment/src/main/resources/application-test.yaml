@@ -1,0 +1,29 @@
+# 设置端口号
+server:
+  port: 8091
+
+spring:
+  # mybatis整合配置datasource以及mybatis-plus配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&&serverTimezone=UTC
+    username: root
+    password: 123456
+  #redis配置
+  redis:
+    host: localhost
+    port: 6379
+    # 没有设置密码就不需要密码
+#    password: 123456
+
+zookeeper:
+  connect-string: localhost:2181
+
+
+mybatis-plus:
+  # 配置mapper映射文件路径 默认为src/main/resources/mapper 如果文件夹命名为mapper则不用配置
+  mapper-locations: classpath:/mappers/**/*.xml
+  configuration:
+    use-actual-param-name: true
+    # 日志打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

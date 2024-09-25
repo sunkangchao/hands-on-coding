@@ -1,6 +1,7 @@
 package com.project.core.zookeeper;
 
 import com.project.core.zookeeper.base.BaseTest;
+import com.project.core.examples.zookeeper.ZookeeperClient;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.KeeperException;
 import org.junit.Before;

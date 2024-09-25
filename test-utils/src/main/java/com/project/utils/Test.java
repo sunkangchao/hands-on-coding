@@ -1,4 +1,4 @@
-package com.project.core;
+package com.project.utils;
 
 /**
  * Test

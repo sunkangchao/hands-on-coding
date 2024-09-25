@@ -18,7 +18,7 @@ logs
 log
 
 ### Project private config files
-**/src/main/resources/application-*.yaml
+#**/src/main/resources/application-*.yaml
 
 ### Eclipse ###
 .apt_generated

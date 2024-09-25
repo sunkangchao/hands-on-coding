@@ -1,4 +1,4 @@
-package com.project.core.zookeeper;
+package com.project.core.examples.zookeeper;
 
 import org.apache.zookeeper.KeeperException;
 import org.springframework.beans.factory.annotation.Value;
