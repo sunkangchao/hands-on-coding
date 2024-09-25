@@ -13,7 +13,6 @@
     <modules>
         <module>deployment</module>
         <module>examples</module>
-        <module>test-utils</module>
         <module>core</module>
     </modules>
 
@@ -36,12 +35,6 @@
             <dependency>
                 <groupId>com.project.core</groupId>
                 <artifactId>examples</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.project.core</groupId>
-                <artifactId>test-utils</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
