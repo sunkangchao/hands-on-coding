@@ -12,6 +12,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>deployment</module>
+        <module>examples</module>
+        <module>test-utils</module>
+        <module>core</module>
     </modules>
 
     <modelVersion>4.0.0</modelVersion>
