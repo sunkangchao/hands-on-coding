@@ -17,6 +17,23 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.project.core</groupId>
+            <artifactId>examples</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.project.core</groupId>
+            <artifactId>test-utils</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.project.core</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+    </dependencies>
+
 
     <build>
         <plugins>

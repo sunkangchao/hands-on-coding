@@ -27,7 +27,31 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.version>1.0.0-SNAPSHOT</project.version>
     </properties>
+
+<!--    依赖管理-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.project.core</groupId>
+                <artifactId>examples</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.project.core</groupId>
+                <artifactId>test-utils</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.project.core</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
 <!--        zookeeper依赖-->
