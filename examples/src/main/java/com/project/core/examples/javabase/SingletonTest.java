@@ -13,17 +13,27 @@ public class SingletonTest {
 //    // 1. 饿汉式
 //    private static SingletonTest instance = new SingletonTest();
 //
-//    private SingletonTest() {}
+//      // todo: one: 私有构造方法，防止外部通过反射创建实例
+//        private SingletonTest() {
+//            if (instance != null) {
+//                throw new IllegalStateException("Instance already created!");
+//            }
+//        }
 //
 //    public static SingletonTest getInstance() {
 //        return instance;
 //    }
 //
-//    // readResolve 方法确保反序列化时返回同一个实例
+//    // todo: two: readResolve 方法确保反序列化时返回同一个实例
 //    private Object readResolve() {
 //        return instance;
 //    }
-//
+//    // todo: three: 禁止克隆
+//    @Override
+//    protected Object clone() throws CloneNotSupportedException {
+//        throw new CloneNotSupportedException("Singleton instance cannot be cloned!");
+//    }
+
 
 //    // 2. 延时加载（同步锁）
 //    private static SingletonTest instance = null;
@@ -66,18 +76,27 @@ public class SingletonTest {
 //        return SingletonHolder.INSTANCE;
 //    }
 
-    // 5. 延时加载（枚举） 推荐使用 -- 需要把原始类型转化成enum枚举类型 可以防止反序列化破坏单例
-    public enum SingletonEnum {
-        INSTANCE;
-
-        public void doSomething() {
-            System.out.println("do something");
-        }
-
-    }
-
-
+//    // 5. 延时加载（枚举） 推荐使用 -- 需要把原始类型转化成enum枚举类型 可以防止反序列化破坏单例
+//    public enum SingletonEnum {
+//        INSTANCE;
+//
+//        public void doSomething() {
+//            System.out.println("do something");
+//        }
+//
+//    }
 
 
+//    @Override
+//    protected Object clone() throws CloneNotSupportedException {
+//        return super.clone();
+//    }
 
+
+//    public static void main(String[] args) throws CloneNotSupportedException {
+//        SingletonTest instance1 = SingletonTest.getInstance();
+//        System.out.println("instance1:" + instance1);
+//        Object cloned = instance1.clone();
+//        System.out.println("cloned object" + cloned);
+//    }
 }
